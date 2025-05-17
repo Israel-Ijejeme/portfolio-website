@@ -362,8 +362,9 @@ a:hover {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* Changed from 3 or 4 to 2 columns */
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 .project-card {
@@ -372,6 +373,9 @@ a:hover {
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    width: 100%; /* Ensure card takes full width of its grid cell */
+    max-width: 600px; /* Optional: limit maximum width */
+    margin: 0 auto;
 }
 
 .project-card:hover {
@@ -721,6 +725,10 @@ footer {
         grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on smaller screens */
         grid-template-rows: repeat(4, auto); /* 4 rows on smaller screens */
         max-width: 500px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Single column for mobile */
     }
 }
 
