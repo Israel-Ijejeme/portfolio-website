@@ -671,12 +671,21 @@ footer {
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: shine 3s linear infinite;
     font-weight: 900;
+    display: inline-block; /* Add this to ensure the gradient applies correctly */
 }
 
 @keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@-webkit-keyframes shine {
     to {
         background-position: 200% center;
     }
